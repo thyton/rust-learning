@@ -1,5 +1,5 @@
 fn main() {
-    // 3.1 Variables and Mutability
+    // 1. Variables and mutability
     // using mut to indicate the variable is mutable
     let mut x = 5;
     println!("The value of x is: {x}");
@@ -30,7 +30,7 @@ fn main() {
     // let mut spaces = "   ";
     // spaces = spaces.len();
 
-    // 3.2 Data Types
+    // 2. Data Types
     // every value in Rust is of a certain data type
     // Rush is a statically typed language. It must know the types
     // of all variables at compile-time
@@ -57,6 +57,10 @@ fn main() {
     let five_hundred = tup.0;
     let six_point_four = tup.1;
     let one = tup.2;
+
+    // The tuple without any values - () has a special name, unit 
+    // The unit value is also written (), which is returned implicitly by
+    // expressions if no other value is returned
 
     // arrays
     // Unlike a tuple, every element of an array must have the same type.

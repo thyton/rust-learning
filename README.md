@@ -12,3 +12,4 @@ Notes from https://doc.rust-lang.org/stable/book/
 | 5 | [branches](branches/src/main.rs) | [Control Flow](https://doc.rust-lang.org/stable/book/ch03-05-control-flow.html) |
 | 6 | [ownership](ownership/src/main.rs) | [Understanding Ownership](https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html) |
 | 7 | [structs](structs/src/main.rs) | [Using Structs to Structure Related Data](https://doc.rust-lang.org/stable/book/ch05-00-structs.html) |
+| 8 | [methods](methods/src/main.rs) | [Method Syntax](https://doc.rust-lang.org/stable/book/ch05-03-method-syntax.html) |

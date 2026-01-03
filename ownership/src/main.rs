@@ -15,7 +15,7 @@ fn main() {
     // The contents are known at compile time, so the text is hardcoded directly
     // into the final executable.
 
-    // Rust String is mutable. It manages data allocated on the heap
+    // Rust String is mutable. It manages data allocated on the heap and
     // is able to store an amount of text that is unknown at compile time
     // The memory must be requested from the memory allocator at runtime.
     // We need a way of returning this memory to the allocator
@@ -90,7 +90,7 @@ fn main() {
 
     // Rust won't let us annotate a type with Copy if the type, or any of its
     // parts, has implemented the Drop trait. It will result in a compile-time
-    // error when we add the Copy annotation to the type to for something special
+    // error when we add the Copy annotation to the type for something special
     // when its value goes out of scope.
 
     // Types that implement the Copy trait
@@ -107,12 +107,10 @@ fn main() {
     {
         let s = String::from("hello");  // s comes into scope
 
-        takes_ownership(s);             // s's value moves into the function...
-                                        // ... and so is no longer valid here
+        takes_ownership(s);        // s's value moves into the function...
+                                                // ... and so is no longer valid here
 
-        let x = 5;                      // x comes into scope
-
-        makes_copy(x);                  // Because i32 implements the Copy trait,
+        makes_copy(x);     // Because i32 implements the Copy trait,
                                         // x does NOT move into the function,
                                         // so it's okay to use x afterward.
     } // Here, x goes out of scope, then s. However, because s's value was moved,
@@ -134,9 +132,9 @@ fn main() {
       // happens. s1 goes out of scope and is dropped.
 
     // The ownership of a variable follows the same pattern: assigning a value
-    // to another variable moves it. The data of a variable that goes out scope
-    // will be cleaned up by drop unless ownership of the data has been moved
-    // to another variable
+    // to another variable moves it. The data of a variable that goes out of 
+    // scope will be cleaned up by drop unless ownership of the data has 
+    // been moved to another variable
 
     // If we want to let a function use a value but not take ownership, we
     // pass back, in addition to any data resulting from the function that we
@@ -187,12 +185,13 @@ fn main() {
         // Uncomment to see the compile-time error of borrowing s
         // as mutable more than once
         // let r2 = &mut s;
+        // let r3 = &s;
 
-        // println!("{r1}, {r2}");
+        // println!("{r1}, {r2}, and {r3}");
     }
 
     // The restriction benefit: Prevent data races at compile time
-    // Similar to a race condtion, a data raceh happens when
+    // Similar to a race condtion, a data race happens when
     // - Two or more pointers access the same data at the same time.
     // - At least one of the pointers is being used to write to the data.
     // - There’s no mechanism being used to synchronize access to the data.
@@ -225,7 +224,7 @@ fn main() {
         // println!("{r1}, {r2}, and {r3}");        
     }
 
-    // Thiw will compile because the scopes of the immutable references r1 and
+    // This will compile because the scopes of the immutable references r1 and
     // r2 end after println! where they are last used, which is before the
     // mutable reference r3 is created  
     {

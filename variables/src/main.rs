@@ -20,13 +20,13 @@ fn main() {
     // it uses x from the same level scope
     println!("The value of x is: {x}");
 
-    // notice tehe difference between using mut and let
+    // notice the difference between using mut and let
     // here, it can assign a different value and a different type
     let spaces = "   ";
     let spaces = spaces.len();
 
 
-    // this would throw a compile-erro because of the wrong type
+    // this would throw a compile-error because of the wrong type
     // let mut spaces = "   ";
     // spaces = spaces.len();
 

@@ -23,7 +23,7 @@ fn main() {
     let y = {
         let x = 3;
         // Note: no semicolon at the end
-        // adding semicolon turns the expression to a function which won't
+        // adding semicolon turns the expression to a statement which won't
         // return a value, which is expressed by `()`, the unit type
         x + 1
     };
